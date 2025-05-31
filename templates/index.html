@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Flask Guestbook</title>
-</head>
-<body>
-  <h1>Leave a Message</h1>
-  <form action="/submit" method="POST">
-    <input type="text" name="message" required>
-    <button type="submit">Submit</button>
-  </form>
+<form method="POST">
+  <input name="message" placeholder="Type your message" required>
+  <button type="submit">Send</button>
+</form>
 
-  <h2>Messages:</h2>
-  <ul>
-    {% for msg in messages %}
-      <li>{{ msg }}</li>
-    {% endfor %}
-  </ul>
-</body>
-</html>
+<ul>
+  {% for msg in messages %}
+    <li>{{ msg[0] }}</li>
+  {% endfor %}
+</ul>
